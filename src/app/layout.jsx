@@ -1,5 +1,8 @@
 import './globals.css';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
 
 export const metadata = {
   title: 'HR Platform',
@@ -27,9 +30,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
 
-        <footer className="text-center p-6 text-sm font-bold text-black bg-black/40 border-t mt-10">
-          &copy; {new Date().getFullYear()} HireHub Platform. All rights reserved.
-        </footer>
+        <Footer />
       </body>
     </html>
   );
