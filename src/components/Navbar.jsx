@@ -1,39 +1,31 @@
 'use client';
 import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white/80 shadow sticky top-0 z-50 backdrop-blur">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-3xl font-bold text-blue-700">HireHub</Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 font-medium">
-          <Link href="/" className="hover:text-blue-600">Home</Link>
-          <Link href="/jobs" className="hover:text-blue-600">Jobs</Link>
-          <Link href="/about" className="hover:text-blue-600">About</Link>
-          <Link href="/contact" className="hover:text-blue-600">Contact</Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+    <nav className="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+      <div className="text-2xl font-bold text-blue-800">HireHub</div>
+      
+      {/* Hamburger button - visible on small screens */}
+      <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow px-4 pb-4 space-y-3">
-          <Link href="/" className="block text-gray-700" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link href="/jobs" className="block text-gray-700" onClick={() => setIsOpen(false)}>Jobs</Link>
-          <Link href="/about" className="block text-gray-700" onClick={() => setIsOpen(false)}>About</Link>
-          <Link href="/contact" className="block text-gray-700" onClick={() => setIsOpen(false)}>Contact</Link>
-        </div>
-      )}
+      {/* Nav Links - hidden on small screens */}
+      <div className={`md:flex space-x-6 items-center ${isOpen ? "block" : "hidden"} md:block`}>
+        <a href="/" className="text-gray-800 hover:text-blue-600">Home</a>
+        <a href="/jobs" className="text-gray-800 hover:text-blue-600">Jobs</a>
+        <a href="/contact" className="text-gray-800 hover:text-blue-600">Contact</a>
+        <a href="/about" className="text-gray-800 hover:text-blue-600">About</a>
+        <a href="/blog" className="text-gray-800 hover:text-blue-600">Blog</a>
+      </div>
     </nav>
   );
 }
