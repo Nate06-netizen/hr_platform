@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className="absolute bottom-10 right-20 w-40 h-40 bg-purple-400 opacity-30 rounded-full blur-2xl"></div>
 
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Find Your Dream Tech Career
+          Find Your Dream Job Career
         </h1>
         <p className="text-lg md:text-xl text-white/90 mb-8">
           Connecting exceptional talent with innovative companies
