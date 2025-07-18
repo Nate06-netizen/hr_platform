@@ -19,7 +19,7 @@ export default function HomePage() {
           Connecting exceptional talent with innovative companies
         </p>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center relative z-10">
           <Link href="/about">
             <span className="bg-blue-600 text-white font-semibold px-6 py-3 rounded shadow hover:bg-blue-700 transition cursor-pointer">
               Learn More
@@ -34,7 +34,7 @@ export default function HomePage() {
           Why Choose HireHub?
         </h2>
         <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-12">
-          We’re not just a job board. HireHub is designed to bridge the gap between top talent and forward-thinking companies using modern, efficient hiring tools.
+          We're not just a job board. HireHub is designed to bridge the gap between top talent and forward-thinking companies using modern, efficient hiring tools.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
